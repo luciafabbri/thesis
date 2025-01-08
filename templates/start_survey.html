@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey - Start</title>
+    <!-- Link al file CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='survey_app.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Comments Survey</h1>
+        <div class="intro">
+            <p>Welcome! This survey is part of a thesis project that aims to study the toxicity of online comments. Your participation will help us better understand how people perceive and classify toxic comments.</p>
+            <p>In the following screen, you will be asked to read a comment (taken out of context) and evaluate its toxicity. You will rate it on a scale: Non-toxic, A little toxic, Toxic, and Very toxic.</p>
+            <p>We will also ask you to provide your age and gender for statistical purposes. Your responses will be kept anonymous.</p>
+        </div>
+        <form method="POST">
+            <div class="question">
+                <label for="age_group">Select your age group:</label>
+                <select name="age_group" required>
+                    <option value="18-25">18 - 29</option>
+                    <option value="26-35">30 - 45</option>
+                    <option value="36-45">46 - 60</option>
+                    <option value="46+">61+</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="gender">Select your gender:</label>
+                <select name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <button type="submit">Start Survey</button>
+        </form>
+    </div>
+</body>
+</html>

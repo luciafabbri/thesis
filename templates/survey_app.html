@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <!-- Link al file CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='survey_app.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Comments Toxicity Survey</h1>
+        <form method="POST">
+            {% for question in questions %}
+            <div class="question">
+                <label for="q{{ loop.index }}">{{ question }}</label>
+                <div class="options">
+                    <input type="radio" id="q{{ loop.index }}_1" name="q{{ loop.index }}" value="Non toxic" required>
+                    <label for="q{{ loop.index }}_1">Non toxic</label>
+
+                    <input type="radio" id="q{{ loop.index }}_2" name="q{{ loop.index }}" value="A little toxic">
+                    <label for="q{{ loop.index }}_2">A little toxic</label>
+
+                    <input type="radio" id="q{{ loop.index }}_3" name="q{{ loop.index }}" value="Toxic">
+                    <label for="q{{ loop.index }}_3">Toxic</label>
+
+                    <input type="radio" id="q{{ loop.index }}_4" name="q{{ loop.index }}" value="Extremely toxic">
+                    <label for="q{{ loop.index }}_4">Extremely toxic</label>
+                </div>
+            </div>
+            {% endfor %}
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

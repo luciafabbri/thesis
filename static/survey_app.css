@@ -1,0 +1,137 @@
+.intro {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f7f7f7;
+    border-left: 4px solid #4CAF50;
+    border-radius: 5px;
+}
+
+.intro p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+
+/* Imposta un font base e uno sfondo leggero */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Centra il contenuto della pagina */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titoli principali */
+h1 {
+    text-align: center;
+    color: #444;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Stile per le domande */
+.question {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-left: 4px solid #4CAF50;
+    background: #f7f7f7;
+    border-radius: 5px;
+}
+
+.question label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Stile per allineare le opzioni su una singola riga */
+.options {
+    display: flex;
+    gap: 40px; /* Spaziatura tra i gruppi di radio button e label */
+    align-items: center; /* Allinea verticalmente i radio button e le etichette */
+}
+
+.options input[type="radio"] {
+    margin-right: 5px; /* Piccola distanza tra il pallino e la label */
+    vertical-align: middle; /* Centra il pallino rispetto al testo */
+}
+
+.options label {
+    margin: 0;
+    font-weight: normal;
+}
+
+
+/* Radio buttons */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+input[type="radio"]:checked + label {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Pulsanti */
+button {
+    display: block;
+    width: 100%;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+/* Selezione dropdown */
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    appearance: none;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+
+    
+}
