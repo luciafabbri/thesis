@@ -1,4 +1,4 @@
-Flask==2.2.2
+flask>=2.1.0
 pandas==1.5.3
 pandas==1.5.3 --only-binary :all:
 numpy==1.23.2 --only-binary :all:
