@@ -1,7 +1,7 @@
 absl-py==2.1.0
 aiofiles==23.1.0
-aiosqlite @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_3d75lecab1/croot/aiosqlite_1683773918307/work
-alabaster @ file:///home/ktietz/src/ci/alabaster_1611921544520/work
+aiosqlite==0.17.0
+alabaster==0.7.12
 anaconda-anon-usage @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ca68ugx5h9/croot/anaconda-anon-usage_1697038938120/work
 anaconda-client==1.11.2
 anaconda-cloud-auth @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_f31ldbbwyn/croot/anaconda-cloud-auth_1697462723029/work
