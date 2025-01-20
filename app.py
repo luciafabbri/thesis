@@ -26,6 +26,9 @@ def load_questions():
     return questions  # Lista di 25 domande
 
 
+import pandas as pd
+import os
+
 def save_responses(age_group, gender, questions, responses):
     # Inizializza un dizionario per i dati da salvare
     data = {
@@ -46,15 +49,18 @@ def save_responses(age_group, gender, questions, responses):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Definisci il percorso completo del file responses.csv
-    file_path = os.path.join(base_dir, './static/responses.csv')
+    file_path = os.path.join(base_dir, 'static', 'responses.csv')
     
-    # Salva su CSV
-    if not os.path.isfile(file_path):
-        # Se il file non esiste, salva l'intestazione e i dati
-        df.to_csv(file_path, index=False)
-    else:
+    # Verifica se il file esiste
+    if os.path.isfile(file_path):
         # Se il file esiste, aggiungi i dati senza l'intestazione
         df.to_csv(file_path, mode='a', header=False, index=False)
+    else:
+        # Se il file non esiste, salva l'intestazione e i dati
+        df.to_csv(file_path, mode='w', header=True, index=False)
+
+    print(f"Responses saved to: {file_path}")  # Messaggio di debug
+
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -89,19 +95,6 @@ def survey():
 
     # Passa le domande al template
     return render_template("survey_app.html", questions=questions)
-
-from flask import send_from_directory
-
-@app.route('/download')
-def download_file():
-    base_dir = os.path.dirname(os.path.abspath(__file__))  # Ottieni la directory principale
-    file_path = os.path.join(base_dir, 'static', 'responses.csv')  # Percorso completo del file
-
-    # Verifica se il file esiste
-    if os.path.isfile(file_path):
-        return send_from_directory(directory=os.path.dirname(file_path), filename='responses.csv', as_attachment=True)
-    else:
-        return "File not found", 404
 
 
 
