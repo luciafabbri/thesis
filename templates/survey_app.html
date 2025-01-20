@@ -15,17 +15,72 @@
             <div class="question">
                 <label for="q{{ loop.index }}">{{ question }}</label>
                 <div class="options">
-                    <input type="radio" id="q{{ loop.index }}_1" name="q{{ loop.index }}" value="Non toxic" required>
-                    <label for="q{{ loop.index }}_1">Non toxic</label>
+                    {% if loop.index <= 5 %}
+                        <!-- Per le prime 5 domande -->
+                        <input type="radio" id="q{{ loop.index }}_1" name="q{{ loop.index }}" value="Non toxic" required>
+                        <label for="q{{ loop.index }}_1">Non toxic</label>
 
-                    <input type="radio" id="q{{ loop.index }}_2" name="q{{ loop.index }}" value="A little toxic">
-                    <label for="q{{ loop.index }}_2">A little toxic</label>
+                        <input type="radio" id="q{{ loop.index }}_2" name="q{{ loop.index }}" value="A little toxic">
+                        <label for="q{{ loop.index }}_2">A little toxic</label>
 
-                    <input type="radio" id="q{{ loop.index }}_3" name="q{{ loop.index }}" value="Toxic">
-                    <label for="q{{ loop.index }}_3">Toxic</label>
+                        <input type="radio" id="q{{ loop.index }}_3" name="q{{ loop.index }}" value="Toxic">
+                        <label for="q{{ loop.index }}_3">Toxic</label>
 
-                    <input type="radio" id="q{{ loop.index }}_4" name="q{{ loop.index }}" value="Extremely toxic">
-                    <label for="q{{ loop.index }}_4">Extremely toxic</label>
+                        <input type="radio" id="q{{ loop.index }}_4" name="q{{ loop.index }}" value="Extremely toxic">
+                        <label for="q{{ loop.index }}_4">Extremely toxic</label>
+                    {% elif loop.index <= 10 %}
+                        <!-- Per le domande dal 6 al 10 -->
+                        <input type="radio" id="q{{ loop.index }}_1" name="q{{ loop.index }}" value="Non racist" required>
+                        <label for="q{{ loop.index }}_1">Non racist</label>
+
+                        <input type="radio" id="q{{ loop.index }}_2" name="q{{ loop.index }}" value="A little racist">
+                        <label for="q{{ loop.index }}_2">A little racist</label>
+
+                        <input type="radio" id="q{{ loop.index }}_3" name="q{{ loop.index }}" value="Racist">
+                        <label for="q{{ loop.index }}_3">Racist</label>
+
+                        <input type="radio" id="q{{ loop.index }}_4" name="q{{ loop.index }}" value="Extremely racist">
+                        <label for="q{{ loop.index }}_4">Extremely racist</label>
+                    {% elif loop.index <= 15 %}
+                        <!-- Per le domande dall'11 al 15 -->
+                        <input type="radio" id="q{{ loop.index }}_1" name="q{{ loop.index }}" value="Non harassing" required>
+                        <label for="q{{ loop.index }}_1">Non harassing</label>
+
+                        <input type="radio" id="q{{ loop.index }}_2" name="q{{ loop.index }}" value="A little harassing">
+                        <label for="q{{ loop.index }}_2">A little harassing</label>
+
+                        <input type="radio" id="q{{ loop.index }}_3" name="q{{ loop.index }}" value="Harassing">
+                        <label for="q{{ loop.index }}_3">Harassing</label>
+
+                        <input type="radio" id="q{{ loop.index }}_4" name="q{{ loop.index }}" value="Extremely harassing">
+                        <label for="q{{ loop.index }}_4">Extremely harassing</label>
+                    {% elif loop.index <= 20 %}
+                        <!-- Per le domande dal 16 al 20 -->
+                        <input type="radio" id="q{{ loop.index }}_1" name="q{{ loop.index }}" value="Non vulgar" required>
+                        <label for="q{{ loop.index }}_1">Non vulgar</label>
+
+                        <input type="radio" id="q{{ loop.index }}_2" name="q{{ loop.index }}" value="A little vulgar">
+                        <label for="q{{ loop.index }}_2">A little vulgar</label>
+
+                        <input type="radio" id="q{{ loop.index }}_3" name="q{{ loop.index }}" value="Vulgar">
+                        <label for="q{{ loop.index }}_3">Vulgar</label>
+
+                        <input type="radio" id="q{{ loop.index }}_4" name="q{{ loop.index }}" value="Extremely vulgar">
+                        <label for="q{{ loop.index }}_4">Extremely vulgar</label>
+                    {% else %}
+                        <!-- Per le domande dal 21 al 25 -->
+                        <input type="radio" id="q{{ loop.index }}_1" name="q{{ loop.index }}" value="Non violent" required>
+                        <label for="q{{ loop.index }}_1">Non violent</label>
+
+                        <input type="radio" id="q{{ loop.index }}_2" name="q{{ loop.index }}" value="A little violent">
+                        <label for="q{{ loop.index }}_2">A little violent</label>
+
+                        <input type="radio" id="q{{ loop.index }}_3" name="q{{ loop.index }}" value="Violent">
+                        <label for="q{{ loop.index }}_3">Violent</label>
+
+                        <input type="radio" id="q{{ loop.index }}_4" name="q{{ loop.index }}" value="Extremely violent">
+                        <label for="q{{ loop.index }}_4">Extremely violent</label>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
