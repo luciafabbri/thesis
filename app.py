@@ -90,6 +90,20 @@ def survey():
     # Passa le domande al template
     return render_template("survey_app.html", questions=questions)
 
+from flask import send_from_directory
+
+@app.route('/download')
+def download_file():
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # Ottieni la directory principale
+    file_path = os.path.join(base_dir, 'static', 'responses.csv')  # Percorso completo del file
+
+    # Verifica se il file esiste
+    if os.path.isfile(file_path):
+        return send_from_directory(directory=os.path.dirname(file_path), filename='responses.csv', as_attachment=True)
+    else:
+        return "File not found", 404
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
