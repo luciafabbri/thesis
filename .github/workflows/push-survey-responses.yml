@@ -21,10 +21,9 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git config --global user.name "Your GitHub Name"
-        git config --global user.email "your-email@example.com"
-        git add static/responses.csv  # Usa il nome corretto del file
-        git commit -m "Update responses.csv"
-        git push origin main  # O il ramo su cui stai lavorando, ad esempio 'main' o 'master'
+        # Aggiungi il file e verifica se ci sono modifiche
+        git add static/responses.csv
+        git diff --cached --exit-code || git commit -m "Update responses.csv"
+        git push origin main  # Sostituisci 'main' con il tuo ramo, se diverso
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
