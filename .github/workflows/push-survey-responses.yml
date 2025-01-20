@@ -1,0 +1,30 @@
+name: Push responses.csv to GitHub
+
+on:
+  push:
+    paths:
+      - 'static/responses.csv'  # Monitora il file responses.csv nella cartella static
+
+jobs:
+  update-csv:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Git
+      uses: actions/setup-git@v2
+      with:
+        git_user_name: 'luciafabbri'
+        git_user_email: 'luciafabbri1999@gmail.com'
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "Your GitHub Name"
+        git config --global user.email "your-email@example.com"
+        git add static/responses.csv  # Usa il nome corretto del file
+        git commit -m "Update responses.csv"
+        git push origin main  # O il ramo su cui stai lavorando, ad esempio 'main' o 'master'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
