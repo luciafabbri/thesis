@@ -47,7 +47,7 @@ def save_responses(age_group, gender, questions, responses):
     cur = conn.cursor()
     for question, response in zip(questions, responses):
         cur.execute(
-            "INSERT INTO survey_responses (age_group, gender, question, response) VALUES (%s, %s, %s, %s)",
+            "INSERT INTO responses (age_group, gender, question, response) VALUES (%s, %s, %s, %s)",
             (age_group, gender, question, response)
         )
     conn.commit()
