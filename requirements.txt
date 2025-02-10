@@ -3,3 +3,4 @@ pandas==1.5.3
 pandas==1.5.3 --only-binary :all:
 numpy==1.23.2 --only-binary :all:
 gunicorn==20.1.0
+psycopg2>=2.9.0
