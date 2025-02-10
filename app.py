@@ -74,7 +74,8 @@ def save_responses(age_group, gender, questions, responses):
                                q23_text, q23_response, 
                                q24_text, q24_response, 
                                q25_text, q25_response)
-        VALUES (%s, %s, 
+        VALUES (%s, %s,
+                %s, %s, 
                 %s, %s, 
                 %s, %s, 
                 %s, %s, 
