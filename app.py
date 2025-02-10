@@ -97,6 +97,7 @@ def save_responses(age_group, gender, questions, responses):
                 %s, %s, 
                 %s, %s, 
                 %s, %s, 
+                %s, %s, 
                 %s, %s)
     """
     
@@ -110,6 +111,7 @@ def save_responses(age_group, gender, questions, responses):
         question = questions[i]
         response = responses[i]
         
+        # Aggiungi domanda e risposta alla lista dei valori
         values.extend([question, response])
     
     # Esegui l'inserimento nel database
